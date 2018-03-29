@@ -1,0 +1,39 @@
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>
+    <meta charset="utf-8">
+    <title>Basic HTML Imports</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+    <!-- Pull in our blog post example -->
+    <!--link rel="import" href="/imports/blog-post-class.html"-->
+    
+    <!--script src="/web-components/blog-post-js.js"></script-->
+    <script src="./web-components/react-wc.js"></script>
+    
+    <!-- Make sure to import chart.html -->
+    <!-- link rel="import" href="/imports/chart-wc.html" -->
+  </head>
+  <body>
+    
+    <!--h1>Boring header</h1>
+    <p>Hello World!</p>
+    <blog-post-js></blog-post-js -->
+
+    <x-search></x-search>
+    
+    <!--h1>Quarterly Pokemon Sales</h1>
+    <chart-pie></chart-pie>
+    <chart-pie></chart-pie>
+    <chart-pie></chart-pie-->
+
+    <!-- Listen for the HTMLImportsLoaded event -->
+    <script>
+    //   window.addEventListener('HTMLImportsLoaded', function() {
+    //     var link = document.querySelector('link[rel=import]');
+    //     var content = link.import.querySelector('#blog-post');
+    //     document.body.appendChild(document.importNode(content, true));
+    //   });
+    </script>
+  </body>
+</html>  

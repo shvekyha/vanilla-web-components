@@ -1,0 +1,30 @@
+<div id="blog-post">  
+        <style>
+        h1 {
+            background: lightgreen;
+            color: green;
+        }
+    
+        p {
+            font-size: 16px;
+            font-family: Helvetica, Arial, sans-serif;
+            color: green;
+            font-weight: bold;
+        }
+        </style>
+    <h1>Awesome header</h1>
+    <p>Here is some really interesting paragraph content. It comes with its own stylesheet!</p>
+</div>
+<script>  
+    // thisDoc refers to the "importee", which is blog-post.html
+    var thisDoc = document.currentScript.ownerDocument;
+    
+    // thatDoc refers to the "importer", which is index.html
+    var thatDoc = document;
+    
+    // grab the contents of the #blog-post from this document
+    // and append it to the importing document.
+    var content = thisDoc.querySelector('#blog-post');
+    thatDoc.body.appendChild(thatDoc.importNode(content, true));
+</script>  
+  

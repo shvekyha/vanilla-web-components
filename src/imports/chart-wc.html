@@ -1,0 +1,61 @@
+<!-- Include Chart.js so our import can use it -->  
+<script src="../node_modules/chart.js/dist/Chart.min.js"></script>  
+<template id="chart-pie"> 
+    <h2>chart</h2> 
+    <canvas class="myChart" width="200" height="200"></canvas>
+</template>
+      
+<script>  
+
+    // thisDoc refers to the "importee", which is chart.html
+    var thisDoc = document.currentScript.ownerDocument;
+
+    // thatDoc refers to the "importer", which is index.html
+    var thatDoc = document;
+
+    var template = thisDoc.querySelector('#chart-pie');
+
+    // Make sure you extend an existing HTMLElement prototype
+    var ChartPieProto = Object.create(HTMLElement.prototype);
+    
+    // Setup optional lifecycle callbacks
+    ChartPieProto.createdCallback = function() {
+        this.initShadowRoot();
+    };
+
+    ProductComponent.initShadowRoot = function () {
+        // Create a shadow root to hold our template content
+        var root = this.createShadowRoot();
+        
+        var clone = thatDoc.importNode(template.content, true);
+        
+        //Get the context of the canvas element we want to select
+        var ctx = clone.querySelector('.myChart').getContext('2d');
+        console.log('inside template1');
+        // var chart = new Chart(ctx, {
+        //     // The type of chart we want to create
+        //     type: 'line',
+
+        //     // The data for our dataset
+        //     data: {
+        //         labels: ["January", "February", "March", "April", "May", "June", "July"],
+        //         datasets: [{
+        //             label: "My First dataset",
+        //             backgroundColor: 'rgb(255, 99, 132)',
+        //             borderColor: 'rgb(255, 99, 132)',
+        //             data: [0, 10, 5, 2, 20, 30, 45],
+        //         }]
+        //     },
+
+        //     // Configuration options go here
+        //     options: {}
+        // });
+        console.log('inside template2');
+        // Add the template content + chart to our Shadow DOM
+        root.appendChild(clone);
+    }
+
+    var ChartPie = thatDoc.registerElement('chart-pie', {prototype: ChartPieProto});
+    //var chartPie = new ChartPie();
+    //var chartPie = document.createElement('chart-pie');
+</script>  
