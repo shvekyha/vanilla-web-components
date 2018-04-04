@@ -1,5 +1,5 @@
 
-class BlogPostJSComponent extends HTMLElement{
+class BlogPostJSClassComponent extends HTMLElement{
     constructor() {
         super(); 
         //var template = document.querySelector('template').content;
@@ -25,6 +25,6 @@ class BlogPostJSComponent extends HTMLElement{
     }
 }
 
-window.customElements.define('blog-post-js', BlogPostJSComponent)
+window.customElements.define('blog-post-js-class', BlogPostJSComponent)
 
   

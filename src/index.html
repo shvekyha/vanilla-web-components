@@ -5,35 +5,51 @@
     <title>Basic HTML Imports</title>
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-    <!-- Pull in our blog post example -->
-    <!--link rel="import" href="/imports/blog-post-class.html"-->
     
-    <!--script src="/web-components/blog-post-js.js"></script-->
-    <script src="./web-components/react-wc.js"></script>
-    
-    <!-- Make sure to import chart.html -->
-    <!-- link rel="import" href="/imports/chart-wc.html" -->
+    <!-- Option #1: import chart.html -->
+    <!--link rel="import" href="/src/imports/chart.html"-->
+
+    <!-- Option #2: import blog-post.html -->
+    <!--link rel="import" href="/src/imports/blog-post.html"-->
+
+    <!-- Option #3: import blog-post-js-function.js -->
+    <!--link rel="import" href="/src/imports/blog-post-js-function.html"-->
+
+    <!-- Option #4: import blog-post-js-class.js -->
+    <!--script src="/src/web-components/blog-post-js-class.js"></script-->
+
+    <!-- Option #5: import chart-wc.html -->
+    <!--link rel="import" href="/src/imports/chart-wc.html"-->
+
+    <!-- Option #6: import react-wc.js -->
+    <script src="/src/web-components/react-wc.js"></script>
+
   </head>
   <body>
-    
-    <!--h1>Boring header</h1>
-    <p>Hello World!</p>
-    <blog-post-js></blog-post-js -->
 
-    <x-search></x-search>
-    
+    <!-- Option #1: Listen for the HTMLImportsLoaded event -->
+    <script>
+      // window.addEventListener('HTMLImportsLoaded', function() {
+      //   var link = document.querySelector('link[rel=import]');
+      //   var content = link.import.querySelector('#blog-post');
+      //   document.body.appendChild(document.importNode(content, true));
+      // });
+    </script>
+
+    <!-- Option #2: use blog-post.html as imported html - loading is taking care of in the imported html -->
+
+    <!-- Option #3: use blog-post-js-function.html as imported html - loading is taking care of in the imported html -->
+
+    <!-- Option #4: use blog-post-js-class.js as imported script and use as web component - need to make babel transpile to es5 NOT WORKING -->
+    <!--blog-post-js-class></blog-post-js-class-->
+
+    <!-- Option #5: use chart-wc.html as web component inside html -->
     <!--h1>Quarterly Pokemon Sales</h1>
     <chart-pie></chart-pie>
     <chart-pie></chart-pie>
-    <chart-pie></chart-pie-->
+    <chart-pie></chart-pie -->
 
-    <!-- Listen for the HTMLImportsLoaded event -->
-    <script>
-    //   window.addEventListener('HTMLImportsLoaded', function() {
-    //     var link = document.querySelector('link[rel=import]');
-    //     var content = link.import.querySelector('#blog-post');
-    //     document.body.appendChild(document.importNode(content, true));
-    //   });
-    </script>
+    <x-search></x-search>
+
   </body>
 </html>  

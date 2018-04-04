@@ -1,5 +1,5 @@
 <!-- Include Chart.js so our import can use it -->  
-<script src="../node_modules/chart.js/dist/Chart.min.js"></script>  
+<script src="../../node_modules/chart.js/dist/Chart.min.js"></script>  
 <template id="chart-pie"> 
     <h2>chart</h2> 
     <canvas class="myChart" width="200" height="200"></canvas>
@@ -23,7 +23,7 @@
         this.initShadowRoot();
     };
 
-    ProductComponent.initShadowRoot = function () {
+    ChartPieProto.initShadowRoot = function () {
         // Create a shadow root to hold our template content
         var root = this.createShadowRoot();
         
@@ -32,6 +32,7 @@
         //Get the context of the canvas element we want to select
         var ctx = clone.querySelector('.myChart').getContext('2d');
         console.log('inside template1');
+        //TODO: chart creation doesnt work for some reason
         // var chart = new Chart(ctx, {
         //     // The type of chart we want to create
         //     type: 'line',
